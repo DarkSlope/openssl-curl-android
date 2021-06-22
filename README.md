@@ -43,6 +43,15 @@ chmod +x ./build.sh
 ./build.sh
 ```
 
+Example for Linux host.  NDK v21.
+
+```bash
+export NDK=$HOME/android-ndk-r21e
+export HOST_TAG=linux-x86_64
+export MIN_SDK_VERSION=21
+```
+
+
 All compiled libs are located in `build/openssl` and `build/curl` directory.
 
 Use NDK to link those libs, part of `Android.mk` example:
