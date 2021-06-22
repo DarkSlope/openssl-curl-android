@@ -43,15 +43,6 @@ chmod +x ./build.sh
 ./build.sh
 ```
 
-Example for Linux host.  NDK v21.
-
-```bash
-export NDK=$HOME/android-ndk-r21e
-export HOST_TAG=linux-x86_64
-export MIN_SDK_VERSION=21
-```
-
-
 All compiled libs are located in `build/openssl` and `build/curl` directory.
 
 Use NDK to link those libs, part of `Android.mk` example:
@@ -78,3 +69,22 @@ include $(PREBUILT_STATIC_LIBRARY)
 - See this minimal example which calls `curl` from Android app, using `JNI` to use `libcurl`: [AndroidCurlExample](https://github.com/robertying/AndroidCurlExample). It includes `Android.mk` setup and `JNI` configurations.
 
 - Checkout this more complex [repo](https://github.com/robertying/CampusNet-Android/blob/master/app/src/main/cpp/jni) to see how to integrate other compiled static libraries into an existing Android project, including `Android.mk` setup and `JNI` configurations.
+
+## Kartik notes
+
+I had to install the following packages first
+
+```
+autoconf
+automake
+libtool
+shtool
+```
+
+Example for Linux host.  NDK v21.
+
+```bash
+export NDK=$HOME/android-ndk-r21e
+export HOST_TAG=linux-x86_64
+export MIN_SDK_VERSION=21
+```
